@@ -1,0 +1,49 @@
+@use 'global' as g;
+.specs{
+    width: 80%;
+    max-width: 600px;
+    @include g.centrado_margin;
+    h2{ 
+        font-size: g.$text-Grande;
+        text-align: center;
+        background-image: linear-gradient(#3b3e40, #141515);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #757171;
+    }
+    .centrar{
+        display: flex;
+    }
+}
+.specs__texto{
+    width: 40%;
+    .specs__caja{
+        width: 50%;
+        margin-bottom: 15%;
+        .specs__parrafo:last-of-type{
+            color: g.$color-humo;
+            margin: 0;
+            font-size: g.$text-pequeña;
+        }
+        figure{
+            margin: 0;
+            width: 13%;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    .specs__caja:first-child{
+        margin-left: 10%;
+    }
+    .specs__caja:nth-child(3){
+        margin-left: 5%;
+    }
+    .specs__caja:last-child{
+        margin-left: 15%;
+    }
+}
+.specs__img{
+    padding-top: 50px;
+    width: 50%;
+}

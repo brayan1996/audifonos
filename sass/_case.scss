@@ -1,0 +1,43 @@
+@use 'global' as g;
+.case{
+    width: 80%;
+    max-width: 600px;
+    @include g.centrado_margin;
+    margin-bottom: 100px;
+    h2{
+        font-size: g.$text-Grande;
+        text-align: center;
+        background-image: linear-gradient(#3b3e40, #141515);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #757171;
+    }
+    .centrar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .case__img{
+        width: 50%;
+        margin: 0;
+    }
+}
+.case__text{
+    width: 40%;  
+    margin-right: 20px; 
+    color: g.$color-humo;
+    line-height: 30px;
+    p{
+        margin-bottom: 40px;
+    }
+    .btn{
+        width: 60%;
+        img{
+            width: 15%;
+        }
+        span{
+            font-size: 1rem;
+        }
+    }
+}
