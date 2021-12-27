@@ -1,0 +1,80 @@
+@forward 'global';
+@use 'global' as g;
+.header{
+    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 5%;
+    z-index: 100;
+    margin: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: g.$color-oscuro;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: g.$max-width;
+    @include g.centrado_margin;
+    .icon{
+        width: 40px;
+        height: 40px;
+    }
+    .nav__link{
+        margin-left:60px;
+        background-image: g.$text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: rgb(117, 113, 113);
+        &:hover{
+            -webkit-text-fill-color: #fff;
+            color: #fff;
+        }
+        
+    }
+    .blanco{
+        -webkit-text-fill-color: #fff;
+        color: #fff;
+    } 
+    .uno{
+        top: 0;
+        transition: all 1s;
+    } 
+}
+.nav__menu{
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:600px) {
+    .nav__menu{
+        visibility: visible;
+        z-index: 200;
+    }
+    .nav__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 150;
+        height: 50vh;
+        width: 100%;
+        background-color: rgb(15, 15, 15);
+        margin: 0;
+        position: fixed;
+        top:-100%;
+        left: 0;
+        transition: all 1s;
+    }
+    .nav{
+        .nav__link{
+            margin: 0;
+        }
+    }
+}

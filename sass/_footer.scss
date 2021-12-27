@@ -1,0 +1,77 @@
+@use 'global' as g;
+.footer{
+    width: 85%;
+    @include g.centrado_margin;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    .footer__logo{
+        width: 3%;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+}
+.social{
+    width: 30%;
+    .social__email{
+        width: 100%;
+        height: 75px;
+        position: relative;
+        background-color: rgb(27, 27, 27);
+        margin-bottom: 25px;
+        border-radius: 10px;
+        .btn{
+            width: 45%;
+            height: 55px;
+            display: block;
+            margin-left: 50%;
+            transform: translateY(12px);
+            position: relative;
+            .btn__centrar{
+               position: absolute;
+               top: 20%;
+               left: 15%;
+            }
+        }
+        .email{
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
+    }
+}
+.social__redes{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    .social__red{
+        width: 12%;
+        background-color: rgb(27, 27, 27);
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+footer{
+    p{
+        text-align: center;
+        font-size: 0.8rem;
+        color: g.$color-humo;
+    }
+}
+@media screen and (max-width:960px) {
+    .footer{
+        width: 100%;
+        .social{
+            width: 40%;
+            .btn{
+                width: 65%;
+                margin-left: 30%;
+            }
+            .social__redes{
+                width: 60%;
+            }
+        }
+    }
+}

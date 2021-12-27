@@ -1,0 +1,135 @@
+@use 'global' as g;
+.presentacion{
+    width: 90%;
+    max-width: g.$max-width;
+    @include g.centrado_margin;
+    margin-bottom: 120px;
+    .presentacion__img{
+        height: 110%;
+        width: 22%;
+        position: absolute;
+        top: -17%;
+        left: 19%;
+        //el % es con respecto al padre del que elemento donde lo declaras
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.texto-fondo{
+    background-image: g.$text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(117, 113, 113);
+}
+.presentacion__texto{
+    width: 50%;
+    margin-top: 25%;
+    margin-left: auto;
+    position: relative;
+    .texto-fondo{
+        font-size: g.$text-extraGrande;
+        font-weight: 900;
+        position: absolute;
+        top: -35%;
+        right: 10%;
+    }
+    h1{
+        font-size: g.$text-Grande;
+        margin-top: 23%;
+        margin-bottom: 0;
+    }
+    p{
+        width: 85%;
+        color: g.$color-humo;
+    }
+    .btn{
+        margin-top: 40px;
+        width: 50%;
+    }
+}
+.btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: g.$color-btn;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 600ms;
+    img{
+       display: inline-block; 
+       width: 10%;
+    }
+    &:hover{
+        background-color: rgb(41, 41, 41);
+    }
+}
+.iconos{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    @include g.centrado_margin;
+    .iconos__img{
+        width: 10%;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .presentacion__texto{
+        .texto-fondo{
+            font-size: 5rem;
+            top: -20%;
+        }
+        h1{
+            font-size: 3.5rem;
+        }
+    }
+    .presentacion{
+        .presentacion__img{
+            width: 37%;
+            left: 15px;
+        }
+        .btn{
+            width: 80%;
+        }
+    }
+    .iconos{
+        width: 90%;
+        .iconos__img{
+            width: 20%;
+        }
+    } 
+}
+@media screen and (max-width:600px) {
+    .presentacion{
+        position: relative;
+        .presentacion__img{
+            object-fit: cover;
+            width: 250px;
+            height: auto;
+            top: -120%;
+            left: 50%;
+        }
+        .presentacion__texto{
+            width: 80%;
+            margin-left: 0;
+            margin-top: 30%;
+            p{
+                width: 130%;
+            }
+            .btn{
+                width: 60%;
+            }
+        }
+    }
+    .iconos{
+        width: 100%;
+        .iconos__img{
+            width: 15%;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use 'global' as g;
+.choose{
+    width: 60%;
+    @include g.centrado_margin;
+    margin-bottom: 200px;
+    h2{
+        font-size: g.$text-Grande;
+        text-align: center;
+        background-image: g.$text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: rgb(117, 113, 113);
+    }
+}
+.choose__container{
+    width: 70%;
+    @include g.centrado_margin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    grid-auto-flow: column dense;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    .choose__element{
+        border-radius: 10px;
+        position: relative;
+        background-color: #1a1a1a;
+        .choose__img{
+            width: 60%;
+            position: absolute;
+            top: -45%;
+        }
+        p{
+            font-size: g.$text-pequeña;
+            margin: 0;
+            margin-top: 85px;
+        }
+        .choose__centrar{
+            width: 85%;
+            @include g.centrado_margin;
+        }
+        .choose__precio{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .btn{
+                width: 20%;
+                height: auto;
+                border-radius: 4px;
+                padding: 7px;
+                img{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:960px){
+    .choose{
+        width: 80%;
+        .choose__container{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width:660px){
+    .choose{
+        width: 90%;
+        .choose__container{
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            .choose__element{
+                .choose__img{
+                    top: -35%;
+                }
+            }
+        }
+    }
+    
+}
